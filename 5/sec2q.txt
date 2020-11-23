@@ -1,0 +1,26 @@
+------------Passing Params to Functions--------------------------
+1. ` (backtick) before $ escapes the $ char and stops expanding of the vars
+     $args is a built-in var to access the param values passed from command-line
+
+2. multiples values for parameters are separated by space
+   values assinged to a single var(1 array element) are separated by only comma
+
+$input is a built-in enumerator that holds the values passed through the pipe
+  *has the MoveNext() method that goes to the next line of input
+  *has Current property that displays the current obj
+
+--------------------Managing Functions--------------
+1. Get-ChildItem function:\
+     *lists all funcs defined in current sesh
+     *uses drive notation to make it easy to list and retrive info
+
+3. get-childitem function:\<func_name>
+     *get info about that func
+
+4. get-childitem function:\<func_name> | format-table definition -wrap
+     *to get the def of the func
+
+5. remove-item function:\<func_name>
+     *get rid of the func from the sesh
+
+

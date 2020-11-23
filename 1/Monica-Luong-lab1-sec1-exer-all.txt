@@ -1,0 +1,4 @@
+1. env > myVars.txt
+2. wc -l myVars.txt
+3. ls -hs myVars.txt
+4. cat myVars.txt

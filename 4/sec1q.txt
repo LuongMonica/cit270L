@@ -1,0 +1,120 @@
+3. Get-Command: prints a list of all available cmdlets/functions/aliases/scripts/apps, etc
+     *cmdlet is an instance of a .NET framework class and acts as a lightweight cmd 
+     *cmdlets perform an action but aren't executable on their own
+
+4. Help has -full option
+
+6. Tab completion for cmdlets! Shift+Tab to cycle backwards
+
+7. get-service: list of installed service
+     -name: look at specific service 
+
+9. get-childitem: list contents of a dir
+
+10. test-path: check if a file exists, outputs "True" or "False"
+
+11. new-item: create a new item
+      -type <type>: can create regular file or dir
+
+--------------Section 2: Format and Filter Output----------------------
+
+2. format-list: Formats the output as a list of properties
+     Ex: get-service | format-list displayname, status, requiredservices
+3. format-table: Formats the output as a table
+   -property <list of props,sep by, commas>
+      Ex: Get-Process -Name powershell | Format-Table -Property Path, Name, Id, Company
+   
+   -autosize: display as much info as possible beginning w/ the leftmost col
+
+   -wrap: prevent data truncation
+   
+   -groupby <param>: group output based on given param
+      Ex: Get-Process | Format-Table -Property Path, Name, Id, Company -groupby company
+
+7. format-custom: display output in custom format
+     Ex: Get-Service  M*  |  Format-Custom  Name,  Status
+
+8. where-object: performs a filter on generic input 
+     Ex: get-service M* | where-object {$_.Status -eq "Running"}
+     *{} are delimters for PS code blocks
+     *$_ is a ref to input obj (in this case the list of services starting w/ the letter m)
+
+9. where: works on array input and will return a collection obj even there isn't output
+     Ex: get-service M* | where {$_.Status -eq "Running"}
+
+10. sort-object: sorts/orders by the param given
+      Ex: get-service | sort-object status
+
+12. out-gridview: sends output to an interactive table in a separate window
+
+------------Section 3: View obj structure using .net type reflectors-----------
+* everything in PS is .net obj: cmdlets, services, processes
+1. get-member: gets the prop and members of an obj
+     Ex: get-service | get-member
+
+4. get-service <service> | select-object servicesdependedon 
+     ^ see what services this service uses/relies on
+
+------------Section 4: Creating and manipulating vars----------------
+1. set var: $var="Value"
+     *if special char are used in var name, {} can be used to surround the var name
+
+2. display value by just: $var
+
+3. or do old-school: write-host $var
+     *better to do this way for scripts
+
+4. $var.gettype().fullname: to get var type
+     ex: output is System.String or Object[]
+
+8. arrays (object[]) can be manipulated thru their .net methods and props
+
+9. to re-declare $var as an array of int
+     [int[]] $var = (1,2,3)
+
+10. get-variable: list of currently declared vars
+
+-----------------Section 5: Working w/ Strings------------------
+2. can concatenate strings using +
+     Ex: $var1 + $var2
+
+4. comparison operators: -ne -eq -lt -ge -le 
+
+5. custom format
+     Ex: "{0:f2}" -f 12.4
+         >12.40
+     ex: "{0,3:C}" -f 12.4
+          |   $12.4|
+
+------------------Section 6: Output to File----------------
+1. out-file <file>: way to redirect output to file
+     -noclobber: prevents an existing file from being overwritten
+
+-------------------Section 7: Admin Assistance----------------
+1. show-command <cmdlet>: show input metadata for that cmdlet
+     *opens up GUI form that allows you to enter info into params, 
+      then hitting run will make PS get populated with the cmdlet 
+      and param inputted earlier
+
+2. -whatif: safely test w/o performing action
+
+3. -confirm: you'll be asked for each thing being performed
+     ex: stop-service m* -confirm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

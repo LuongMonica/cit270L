@@ -1,0 +1,39 @@
+1. PS ISE: eidtor with features taht let you run cmds and manage scripts in a friendly, syntax-colored, Unicode-compliant env
+     *panes: script editor, commands, and console
+
+2. console pane: running interactive cmds, just like reg PS
+
+3. if script pane isn't visible then click on menu item View > Show Script Pane
+     *script pane lets you compose, edit , debg, and run functions and scripts
+        *you don't have to switch between apps/windows if you have console and script panes open
+
+4. IntelliSense activated in script pane
+     *displays context sensitive cmds
+
+-------------------Sec 2: Creating a Script File-------------
+1. get-executionpolicy: find current script execution policy
+     *restricted: default, no script are allowed to run, PS can only be used in interactive mode
+     *allsigned: only scripts signed by a trusted publisher can be run
+     *remotesigned: downloaded scripts mut be signed by a trusted publisher
+     *unrestricted: no restrictions: all PS scripts can be run
+
+2. set-executionpolicy: change the policy
+     *requires admin priv
+
+6. ways to run your script:
+     *click Run Script 
+     *Debug > Run/Continue (F5)
+     *in console .\<filename>
+     *Invoke-Expression .\<filename>
+     *& .\<filename>
+
+-------------------Sec 3: Creating Functions--------------
+1. to create new script in ISE File > New (CTRL + N)
+
+4. first param is "switch", unlike a string param, we need to prepend "-" to param value when we call it
+
+5. if you call the function at the end of your script you don't have to use the console! just run the script
+
+------------------Sec 4: Forms & .NET integration-------------
+2. power of PS is the .NET framework integration! this includes visual components of .NET
+     *incl: forms, dialog boxes

@@ -1,0 +1,2 @@
+1. Get-ChildItem  -path "C:\Windows" -Filter "*.dll" -Recurse
+2. Get-Process | Where-Object {$_.HandleCount -gt 1000} | Sort-Object -Property StartTime | Format-Table -Property ProcessName, HandleCount, StartTime | Out-File "C:\courses\cit270\lab4\ProcessOutput.txt"

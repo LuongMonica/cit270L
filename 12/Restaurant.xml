@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='Restaurants.xslt'?>
+<!-- Monica Luong -->
+<Restaurants>
+    <Restaurant Name="Little Cabin Inn" QualityRating="4" PriceRange="2">
+        <Phone> 123-456-789 </Phone>
+        <Location>
+            <Address> 1 main street </Address> 
+            <City> Los Angeles </City> 
+            <State> CA </State>
+        </Location>
+        <Menu> 
+            <MenuItem Name="Hamburger" Price="$9.95" Calories="1500" IsVegetarian="False"> Hamburger </MenuItem>
+            <MenuItem Name="Fruit Salad" Price="$11.99" Calories="400" IsVegetarian="True" > Fruit Salad </MenuItem>
+        </Menu>
+    </Restaurant>
+    <Restaurant Name="Bear and Breakfast" QualityRating="5" PriceRange="2">
+        <Phone> 555-555-555 </Phone>
+        <Location>
+            <Address> 123 Sasquatch Lane </Address> 
+            <City> Los Angeles </City> 
+            <State> CA </State>
+        </Location>
+        <Menu> 
+            <MenuItem Name="Cheeseburger" Price="$10" Calories="1600" IsVegetarian="False"> Cheeseburger </MenuItem>
+            <MenuItem Name="Tea" Price="$2.99" Calories="300" IsVegetarian="True" > Tea </MenuItem>
+            <MenuItem Name="Cereal" Price="$5.99" Calories="600" IsVegetarian="True" > Cereal </MenuItem>
+        </Menu>
+    </Restaurant>
+    <Restaurant Name="Alex's Diner" QualityRating="4.5" PriceRange="3">
+        <Phone> 100-200-300 </Phone>
+        <Location>
+            <Address> 1000 Jeopardy Avenue </Address> 
+            <City> Harlem </City> 
+            <State> NY </State>
+        </Location>
+        <Menu> 
+            <MenuItem Name="Apple Pie" Price="$12.55" Calories="1500" IsVegetarian="False"> Apple Pie </MenuItem>
+            <MenuItem Name="Breakfast Platter" Price="$11.99" Calories="1350" IsVegetarian="False" > Breakfast Platter </MenuItem>
+        </Menu>
+    </Restaurant>
+</Restaurants>

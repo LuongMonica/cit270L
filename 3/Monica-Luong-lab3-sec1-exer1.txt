@@ -1,0 +1,1 @@
+sort <file> | uniq > tmp.txt | mv tmp.txt <file>

@@ -1,0 +1,25 @@
+-----------------Switch conditional w/ wildcard-------------
+-wildcard flag allows partial string searches
+*if an array of data is passed, switch will run for each element in the array
+
+---------------For each---------------------------
+2 ways: 
+  - Get-ChildItem  *txt  |  ForEach-Object  {$_.FullName}
+      -in this pipeline, each obj is generated and passed to the cmdlet for processing right away 
+  - foreach ($f  in  Get-ChildItem  *.txt) { $f.FullName }
+      -keyword, the entire list of values is generated before a single value is processed
+      -also an alias for ForEach-Object but is only interpreted as an alias if it's
+       being piped into
+
+---------------Loop w/ % and $_ --------------
+1..3 | % {$_}
+  1
+  2
+  3
+- % is an alias for foreach, basically does a foreach on each obj in the pipeline
+
+---------------Working w/ Providers---------------
+* providers enable you to access common data stores in Win OS like FS, registry, certificate store
+    -data that a provider exposes appears in a drive and is presented in consistent format
+     that resembles FS
+1. unless you put -persist, New-PSDrive will be temp, only exist w/in this PS sesh
