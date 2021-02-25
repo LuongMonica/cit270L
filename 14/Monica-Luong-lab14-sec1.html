@@ -1,0 +1,42 @@
+<html>
+	<body>
+		<h1 id="heading1">Original Page Heading</h1>
+		<p id="para1">Original Paragraph</p>
+		<input type="button" onclick="sayHello('James Bond')" value="Say Hello" />
+		<input type="button" onclick="magic()" value="Magic" />
+		<p id="comment1"><strong>Note:</strong>The comments are not executed. </p>
+		<br/>
+		<img src="https://o.aolcdn.com/images/dims?thumbnail=640%2C&quality=95&image_uri=https%3A%2F%2Fs.yimg.com%2Fuu%2Fapi%2Fres%2F1.2%2FAipeK2vS4mbEIlUkY7MCgA--%7EB%2FaD05OTk7dz0xNjAwO2FwcGlkPXl0YWNoeW9u%2Fhttps%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fcrop%3D1729%252C1080%252C22%252C0%26quality%3D85%26format%3Djpg%26resize%3D1600%252C999%26image_uri%3Dhttps%253A%252F%252Fs.yimg.com%252Fos%252Fcreatr-uploaded-images%252F2019-10%252Fec3c68c0-f02c-11e9-86d6-3fd726ab9478%26client%3Da1acac3e1b3290917d92%26signature%3Dd8e002963b0d0faeeea95e6c9d9d5bfc3854f71b&client=amp-blogside-v2&signature=68a736902fbb9c51afb260ae88582f4b4c5a956b" width="600" height="400" id="gigaPika" onclick="changeImage();"/>
+		<script>
+		/* Monica Luong */
+		// change heading: 
+		document.getElementById("heading1").innerHTML = "My First Page";
+		/* Change paragraph: 
+		*/
+		document.getElementById("para1").innerHTML = "My first paragraph"
+		document.getElementById("heading1").style.color = "blue";
+
+		function sayHello(name) {
+			document.getElementById("para1").innerHTML = "First paragraph - By: " + name;
+		}
+		function magic() {
+			var x = document.getElementById('comment1');
+			if (x.style.display == 'none') {
+					x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+		}
+		var step = 0;
+		function changeImage() {
+			var images = ['https://o.aolcdn.com/images/dims?thumbnail=640%2C&quality=95&image_uri=https%3A%2F%2Fs.yimg.com%2Fuu%2Fapi%2Fres%2F1.2%2FAipeK2vS4mbEIlUkY7MCgA--%7EB%2FaD05OTk7dz0xNjAwO2FwcGlkPXl0YWNoeW9u%2Fhttps%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fcrop%3D1729%252C1080%252C22%252C0%26quality%3D85%26format%3Djpg%26resize%3D1600%252C999%26image_uri%3Dhttps%253A%252F%252Fs.yimg.com%252Fos%252Fcreatr-uploaded-images%252F2019-10%252Fec3c68c0-f02c-11e9-86d6-3fd726ab9478%26client%3Da1acac3e1b3290917d92%26signature%3Dd8e002963b0d0faeeea95e6c9d9d5bfc3854f71b&client=amp-blogside-v2&signature=68a736902fbb9c51afb260ae88582f4b4c5a956b', 'https://pm1.narvii.com/7100/de95fe2eace29292fa66125e5c508b6ef2686d9cr1-744-723v2_hq.jpg', 'https://cdn.fanbyte.com/wp-content/uploads/2020/02/gmaxpikachu-1024x576.jpg?x52070', 'https://cdn.bulbagarden.net/upload/thumb/d/d7/JN013.png/400px-JN013.png'];
+			var len = images.length;
+			
+			// if at the end of the array, start over
+			if (typeof images == "undefined" || step == images.length) step = 0;
+			document.getElementById('gigaPika').src = images[step];
+			step++;
+		}
+		</script>
+	</body>
+</html>

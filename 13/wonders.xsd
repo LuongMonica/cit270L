@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+	<!--Monica Luong-->
+     <xs:element name="wonder">        
+        <xs:complexType>            
+            <xs:sequence>
+                <xs:element name="name">
+                    <xs:complexType>                        
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">                                
+                                <xs:attribute name="language" type="xs:string"/>
+                            </xs:extension>                        
+                        </xs:simpleContent>                    
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="location" type="xs:string"/>
+				<xs:element name="height" type="xs:string">
+					<xs:complexType>
+					    <xs:attribute name="units" type="xs:string"/>
+				    </xs:complexType>
+				</xs:element>
+                <xs:element name="history">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:complexType name="year_type" min="0" max="5000">
+								<xs:attribute name="era" type="xs:string"/>
+                                <xs:element name="year_built" type="xs:year_type"/>
+                                <xs:element name="year_destroyed" type="xs:year_type"/>
+                                <xs:element name="how_destroyed" type="xs:string" default="fire"/>
+                                <xs:element name="story" type="story_type"/>
+                            </xs:complexType>
+                        </xs:sequence>
+                    </xs:complexType>
+				</xs:element>
+				<xs:element name="image">
+					<xs:complexType>
+					    <xs:attribute name="w" type="xs:positiveInteger"/>
+					    <xs:attribute name="h" type="xs:positiveInteger"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="url" type="xs:anyURI"/>
+            </xs:sequence>        
+        </xs:complexType>    
+    </xs:element>
+
+    <xs:simpleType name="story_type">
+		<xs:restriction base="xs:string">
+			<xs:length value="1024"/>
+		</xs:restriction>
+    </xs:simpleType>
+</xs:schema>
